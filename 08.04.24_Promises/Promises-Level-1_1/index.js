@@ -1,29 +1,18 @@
 const fs = require("fs");
 
-const dobleNumber = (number) => {
+const dobleNumber = (number, time) => {
   return new Promise((resolve, reject) => {
-    resolve(number);
+    setTimeout(() => {
+      const multiNum = number * 2;
+      resolve(multiNum);
+    }, time);
   });
 };
 
-dobleNumber(3)
-  .then((result) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(result * 2);
-      }, 2000);
-    });
-  })
+dobleNumber(3, 1000)
   .then((result) => console.log("Ergebnis:", result))
   .catch((err) => console.log("fehler:", err));
 
-dobleNumber(7)
-  .then((result) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(result * 2);
-      }, 5000);
-    });
-  })
+dobleNumber(7, 2000)
   .then((result) => console.log("Ergebnis:", result))
   .catch((err) => console.log("fehler:", err));
