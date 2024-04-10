@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+.home-wrapper {
+  background-color: #f3c552;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  padding: 0 1.5vw;
+}
+
+.home {
+  border-radius: 12px;
+  width: 70%;
+  height: 80%;
+  background-color: white;
+  padding: 2vw;
+  background: url("homeimg") no-repeat right;
+  background-size: contain;
+  background-color: white;
+  height: 80vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7vw;
+}
+header a {
+  color: gray;
+  text-decoration: none;
+}
+#sign {
+  color: black;
+  padding: 0.2vw;
+  border: solid 1px black;
+}
+
+main {
+  padding-left: 5vw;
+}
+main p {
+  margin-bottom: 1vw;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 50%;
+  line-height: 40px;
+}
+main h1 {
+  margin-bottom: 2vw;
+  font-size: 45px;
+  font-family: "Times New Roman", Times, serif;
+  width: 10ch;
+}
+main span {
+  font-weight: bold;
+}
+
+main a {
+  background-color: #daa520;
+  color: white;
+  border: none;
+  padding: 0.4vw;
+  text-decoration: none;
+  border-radius: 3px;
+}

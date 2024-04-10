@@ -1,0 +1,19 @@
+body {
+  background-color: antiquewhite;
+  background-size: cover;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  padding: 1vw;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
