@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url("/fonts/Nunito-VariableFont_wght.ttf");
+}
+
+img {
+  max-width: 100%;
+}
+html {
+  font-family: nunito;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.5vw;
+  padding: 0 1.5vw;
+  margin-top: 1vw;
+}
+header a {
+  color: gray;
+  text-decoration: none;
+  padding: 0 1.5vw;
+}
+#sign {
+  color: black;
+  padding: 0.2vw 0.45vw;
+  border: solid 1px black;
+  background-color: #f9bdbd;
+  border-radius: 3px;
+}
+#home {
+  color: #daa520;
+}
+
+main {
+  padding: 0 2vw;
+}
+/* Headline */
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3vw;
+}
+.headline h4 {
+  font-size: 25px;
+  font-weight: 800;
+  padding: 0 1vw;
+}
+.headline h1 {
+  color: #222222;
+  opacity: 20%;
+  font-weight: 800;
+  font-size: 90px;
+  padding-left: 1vw;
+  text-transform: uppercase;
+}
+
+hr {
+  color: black;
+  height: 0.3px;
+  width: 37%;
+  border: none;
+  border-top: 1px black solid;
+}
+
+/* Content-right */
+
+.content-right {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3vw;
+}
+
+.text-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+.text-right h3 {
+  font-size: 36px;
+  font-weight: 400;
+  width: 55%;
+  margin-bottom: 0.8vw;
+}
+.text-right h3 span {
+  font-weight: 800;
+}
+
+/* Content-left */
+
+.content-left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3vw;
+}
+.text-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-right: 15vw;
+}
+.text-left h3 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 0.8vw;
+}
+.text-left h3 span {
+  font-weight: 800;
+}
+
+/* Subscribe */
+
+.subscribe {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20vw;
+  margin-bottom: 7vw;
+}
+
+.subscribe-text h6 {
+  font-size: 18px;
+}
+.subscribe-text p {
+  font-size: 16px;
+}
+
+form input:nth-of-type(1) {
+  padding: 0.5vw 5vw;
+  border: 1px solid #daa520;
+  border-radius: 2px;
+}
+form input:nth-of-type(2) {
+  padding: 0.5vw 1vw;
+  background-color: #daa520;
+  color: white;
+  margin-left: -1vw;
+  border: 1px solid #daa520;
+  border-radius: 2px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  border-top: #c4c4c4 0.7px solid;
+  padding: 1vw 2vw;
+  background: url("/img/footer.bgr.png") no-repeat right;
+  background-size: contain;
+  gap: 10vw;
+}
+
+footer h6 {
+  font-size: 18px;
+}
+footer p {
+  font-size: 16px;
+  color: #c4c4c4;
+}
+
+.first-row img {
+  width: 60%;
+}

@@ -8,6 +8,15 @@ img {
   max-width: 100%;
 }
 
+@font-face {
+  font-family: nunito;
+  src: url("/fonts/Nunito-VariableFont_wght.ttf");
+}
+
+html {
+  font-family: nunito;
+}
+
 .home-wrapper {
   background-color: #f3c552;
   min-height: 100vh;
@@ -21,12 +30,12 @@ nav a {
 }
 
 .home {
-  border-radius: 12px;
+  border-radius: 15px;
   width: 70%;
   height: 80%;
   background-color: white;
   padding: 2vw;
-  background: url("homeimg") no-repeat right;
+  background: url("/img/home_bgr.png") no-repeat right;
   background-size: contain;
   background-color: white;
   height: 80vh;
@@ -47,6 +56,9 @@ header a {
   padding: 0.2vw;
   border: solid 1px black;
 }
+#home {
+  color: #daa520;
+}
 
 main {
   padding-left: 5vw;
@@ -54,18 +66,18 @@ main {
 main p {
   margin-bottom: 1vw;
   font-size: 30px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
   width: 50%;
   line-height: 40px;
 }
 main h1 {
   margin-bottom: 2vw;
   font-size: 45px;
-  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
   width: 10ch;
 }
 main span {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 main a {

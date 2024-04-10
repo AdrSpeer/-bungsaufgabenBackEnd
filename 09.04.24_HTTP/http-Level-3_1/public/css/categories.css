@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url("/fonts/Nunito-VariableFont_wght.ttf");
+}
+
+img {
+  max-width: 100%;
+}
+html {
+  font-family: nunito;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.5vw;
+  padding: 0 1.5vw;
+  margin-top: 1vw;
+}
+header a {
+  color: gray;
+  text-decoration: none;
+  padding: 0 1.5vw;
+}
+#sign {
+  color: black;
+  padding: 0.2vw 0.45vw;
+  border: solid 1px black;
+  background-color: #f9bdbd;
+  border-radius: 3px;
+}
+#home {
+  color: #daa520;
+}
+
+main {
+  padding: 0 2vw;
+}
+/* Headline */
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 3vw;
+}
+.headline h4 {
+  font-size: 25px;
+  font-weight: 800;
+  padding: 0 1vw;
+}
+.headline h1 {
+  color: #222222;
+  opacity: 20%;
+  font-weight: 800;
+  font-size: 90px;
+  padding-left: 1vw;
+  text-transform: uppercase;
+}
+
+hr {
+  color: black;
+  height: 0.3px;
+  width: 15%;
+  border: none;
+  border-top: 1px black solid;
+}
