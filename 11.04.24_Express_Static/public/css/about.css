@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 2vw;
+}
+
+header nav a {
+  padding: 0 0.5vw;
+  text-decoration: none;
+  color: black;
+}
+header nav a:hover {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+/* Bio */
+.bio div {
+  padding: 2vw 5vw;
+}
+
+.bio-box {
+  display: flex;
+}
+.bio img {
+  width: 30%;
+  border-radius: 10px;
+}
+.bio h2 {
+  margin-bottom: 1vw;
+}
+
+.content p {
+  margin-bottom: 0.5vw;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(201, 201, 201, 0.337);
+}
+footer p {
+  font-size: 12px;
+}
+.links {
+  margin: 0.5vw 0;
+}
+.links a {
+  padding: 0 0.8vw;
+  text-decoration: none;
+  color: black;
+}
+.links a:hover {
+  border: 1px solid black;
+  border-radius: 2px;
+}

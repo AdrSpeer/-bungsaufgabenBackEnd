@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "name": "11.04.24_express_static",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Adrian Speer",
+  "license": "ISC",
+  "description": "Pepe Mujica"
+}

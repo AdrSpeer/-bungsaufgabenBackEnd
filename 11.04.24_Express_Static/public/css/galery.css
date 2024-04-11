@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 2vw;
+}
+
+header nav a {
+  padding: 0 0.5vw;
+  text-decoration: none;
+  color: black;
+}
+header nav a:hover {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+/* Main */
+main h2 {
+  text-align: center;
+}
+
+.img {
+  margin: auto;
+  padding: 1vw;
+}
+main img {
+  width: 48%;
+}

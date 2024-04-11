@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 2vw;
+}
+
+header nav a {
+  padding: 0 0.5vw;
+  text-decoration: none;
+  color: black;
+}
+header nav a:hover {
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+/* Hero */
+
+.hero {
+  background: url("../img/joseMujica_hero.png") no-repeat top;
+  background-size: cover;
+  height: 90vh;
+}
+
+.hero h1 {
+  color: white;
+  padding-top: 15vh;
+  padding-left: 5vw;
+}
+.hero span {
+  color: white;
+  display: block;
+  font-size: 38px;
+}
+
+/* short-desc */
+
+.short-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(197, 194, 194, 0.497);
+  padding: 4vw 0;
+}
+.short-desc h3 {
+  font-size: 28px;
+  margin-bottom: 1vw;
+}
+.short-desc p {
+  margin-bottom: 0.5vw;
+}
+.short-desc a {
+  color: black;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(201, 201, 201, 0.337);
+}
+footer p {
+  font-size: 12px;
+}
+.links {
+  margin: 0.5vw 0;
+}
+.links a {
+  padding: 0 0.8vw;
+  text-decoration: none;
+  color: black;
+}
+.links a:hover {
+  border: 1px solid black;
+  border-radius: 2px;
+}
