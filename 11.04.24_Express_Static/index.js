@@ -17,5 +17,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/pages/home.html");
 });
 
+app.use((_, res) => {
+  res.status(404);
+  res.sendFile(__dirname + "/public/pages/error.html");
+});
+
 const PORT = 3003;
 app.listen(PORT, console.log("Server ready at:", PORT));
