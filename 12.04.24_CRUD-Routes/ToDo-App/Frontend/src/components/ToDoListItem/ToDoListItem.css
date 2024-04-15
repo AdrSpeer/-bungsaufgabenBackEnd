@@ -1,0 +1,21 @@
+.do-item-green {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: green;
+  padding: 10px;
+}
+.do-item-red {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: red;
+  padding: 10px;
+}
+
+.show-edit {
+  display: block;
+}
+.hide-edit {
+  display: none;
+}
