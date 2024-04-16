@@ -1,0 +1,31 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(124, 122, 122, 0.309);
+}
+.detail h1 {
+  margin-top: 3vw;
+}
+
+.detail img {
+  width: 50%;
+}
+.detail div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw;
+  gap: 1vw;
+  text-align: center;
+}
+.detail button {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
