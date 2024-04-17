@@ -24,9 +24,11 @@ app.get("/api/v1/blogs", (_, res) => {
 });
 
 app.get("/api/v1/blog/:id", param("id").isNumeric(), (req, res) => {
-  const validatorError = validationResult(req);
-  if (!validatorError.isEmpty()) {
-    return res.status(400).json({ message: "Data not valid" });
+  const validationError = validationResult(req);
+  if (!validationError.isEmpty()) {
+    return res
+      .status(400)
+      .json({ message: "Data not valid", errors: validationError.array() });
   }
 
   const blogId = req.params.id;
@@ -46,11 +48,13 @@ app.post(
   body("title").isString().notEmpty(),
   body("subtitle").isString().notEmpty(),
   body("text").isString().notEmpty(),
-  body("filename").isString().notEmpty,
+  body("filename").isString().notEmpty(),
   (req, res) => {
-    const validatorError = validationResult(req);
-    if (!validatorError.isEmpty()) {
-      return res.status(400).json({ message: "Data not valid" });
+    const validationError = validationResult(req);
+    if (!validationError.isEmpty()) {
+      return res
+        .status(400)
+        .json({ message: "Data not valid", errors: validationError.array() });
     }
 
     const newBlog = {
