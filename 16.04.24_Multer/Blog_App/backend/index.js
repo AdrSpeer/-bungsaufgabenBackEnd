@@ -1,4 +1,5 @@
 import express from "express";
+import { body, validationResult, param } from "express-validator";
 import multer from "multer";
 import cors from "cors";
 import { readBlog, writeBlog } from "./filesystem.js";
@@ -22,7 +23,12 @@ app.get("/api/v1/blogs", (_, res) => {
     );
 });
 
-app.get("/api/v1/blog/:id", (req, res) => {
+app.get("/api/v1/blog/:id", param("id").isNumeric(), (req, res) => {
+  const validatorError = validationResult(req);
+  if (!validatorError.isEmpty()) {
+    return res.status(400).json({ message: "Data not valid" });
+  }
+
   const blogId = req.params.id;
 
   readBlog()
@@ -35,22 +41,34 @@ app.post("/api/blog/upload", upload.single("attachment"), (req, res) => {
   res.json({ filename: req.file.filename });
 });
 
-app.post("/api/blog/newupload", (req, res) => {
-  const newBlog = {
-    id: Date.now(),
-    title: req.body.title,
-    subtitle: req.body.subtitle,
-    text: req.body.text,
-    filename: req.body.filename,
-  };
-  readBlog()
-    .then((blogs) => [...blogs, newBlog])
-    .then((newBlogs) => writeBlog(newBlogs))
-    .then((newBlogs) => res.status(200).json(newBlogs))
-    .catch((err) =>
-      res.status(500).json({ err, message: "Could not add new blog" })
-    );
-});
+app.post(
+  "/api/blog/newupload",
+  body("title").isString().notEmpty(),
+  body("subtitle").isString().notEmpty(),
+  body("text").isString().notEmpty(),
+  body("filename").isString().notEmpty,
+  (req, res) => {
+    const validatorError = validationResult(req);
+    if (!validatorError.isEmpty()) {
+      return res.status(400).json({ message: "Data not valid" });
+    }
+
+    const newBlog = {
+      id: Date.now(),
+      title: req.body.title,
+      subtitle: req.body.subtitle,
+      text: req.body.text,
+      filename: req.body.filename,
+    };
+    readBlog()
+      .then((blogs) => [...blogs, newBlog])
+      .then((newBlogs) => writeBlog(newBlogs))
+      .then((newBlogs) => res.status(200).json(newBlogs))
+      .catch((err) =>
+        res.status(500).json({ err, message: "Could not add new blog" })
+      );
+  }
+);
 
 const PORT = 3003;
 app.listen(PORT, console.log("Server is ready at Port:", PORT));
