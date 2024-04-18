@@ -20,7 +20,7 @@ const Home = () => {
       </header>
       <main>
         <AddForm setEntrys={setEntrys} />
-        <EntryCard entrys={entrys} />
+        <EntryCard entrys={entrys} setEntrys={setEntrys} />
       </main>
     </section>
   );

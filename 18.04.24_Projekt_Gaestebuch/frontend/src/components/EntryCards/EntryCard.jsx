@@ -1,7 +1,17 @@
 import "./EntryCards.css";
-
-const EntryCard = ({ entrys }) => {
+import DeleteIcon from "@mui/icons-material/Delete";
+const EntryCard = ({ entrys, setEntrys }) => {
   console.log(entrys);
+
+  const deleteEntry = (id) => {
+    fetch(`http://localhost:3003/api/v1/guestbook/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => setEntrys(data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <section className="entry-card">
       <h1>Unsere Einträge</h1>
@@ -16,6 +26,7 @@ const EntryCard = ({ entrys }) => {
           </h3>
           <h6>{item.email}</h6>
           <p>{item.message}</p>
+          <DeleteIcon className="delete" onClick={() => deleteEntry(item.id)} />
         </div>
       ))}
     </section>

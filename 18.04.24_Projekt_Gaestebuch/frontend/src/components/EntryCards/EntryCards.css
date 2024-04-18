@@ -29,3 +29,7 @@ p {
   font-size: 10px;
   padding: 0 6px;
 }
+
+.delete {
+  cursor: pointer;
+}
