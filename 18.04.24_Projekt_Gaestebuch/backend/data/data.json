@@ -1,0 +1,34 @@
+[
+  {
+    "firstName": "Adrian",
+    "lastName": "Speer",
+    "id": 1713431218167,
+    "timestamp": 1713431218167,
+    "email": "adrian@gmail.com",
+    "message": "Das ist der erste Eintrag"
+  },
+  {
+    "firstName": "Cecile",
+    "lastName": "Staller",
+    "id": 1713431921675,
+    "timestamp": 1713431921675,
+    "email": "ceci@gmail.com",
+    "message": "Hallo, wie gehts"
+  },
+  {
+    "firstName": "adadad",
+    "lastName": "aaa",
+    "id": 1713437431428,
+    "timestamp": 1713437431428,
+    "email": "adri@gmail.com",
+    "message": "Funktioniert"
+  },
+  {
+    "firstName": "Adrian",
+    "lastName": "Speer",
+    "id": 1713437769678,
+    "timestamp": 1713437769678,
+    "email": "test@gmail.com",
+    "message": "Adrian"
+  }
+]
