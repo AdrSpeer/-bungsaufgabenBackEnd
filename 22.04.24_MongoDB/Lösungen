@@ -1,0 +1,7 @@
+// db.movieDetails.find({director: "Steven Spielberg"}) - Zeigt alle Filme von Steven Spielberg an
+// db.movieDetails.find({"tomato.userReviews": {$gt: 40000}}).limit(20).sort({"tomato.rating": -1}) - Sucht nach Filmen mit +40.000 Reviews und zeigt 20Stk. an mit absteigender Bewertung
+// db.movieDetails.find({$and: [{"year": {$gte: 2000}}, {"year": {$lte: 2005}}]}, {"title": 1, "year": 1, "_id": 0}) - Zeigt die Filme inkl. der Jahre zwischen 2000-2005 an und gibt nur title und year zurück. ID ist auf null, da diese Standardmäßig angezeigt wird und so nicht mehr angezeigt wird.
+// db.movieDetails.find({$and: [{"tomato.rating": {$gte: 4}}, {"year": {$gt: 2010}}]}, {"title": 1, "director": 1, "_id": 0}) - Sucht nach Filem mit einem Rating größer gleich 4 und nach 2010 entstanden sind, zurückgegeben werden nur title und director
+// db.movieDetails.find({ "tomato.userReviews": {$lt: 1000}, "year": {$lt: 2005} }).sort({"tomato.userReviews": 1}).limit(10) - Sucht Filme mit weniger als 1.000 Benutzer Bewertungen, die vor 2005 gedreht wurden. Gibt max 10 Stück aus und sortierd aufsteigen nach Menge der User Reviews
+// db.movieDetails.find({ "tomato": { $exists: false } }) - Zeigt alle Filme an die nicht das Feld "tomato" haben
+// db.movieDetails.find({ "imdb.votes": { $gte: 100, $lt: 1000 } }, { "title": 1, "imdb.rating": 1, "_id": 0 }) - Sucht Filme mit min. 100 imbd Votes und max. 1000, gibt Titel und IMBd Bewertung zurück
