@@ -1,0 +1,25 @@
+.home {
+  background-color: #264653;
+}
+
+.hero {
+  background: url("/img/hero.png") no-repeat center;
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  color: #a16171;
+  font-size: 50px;
+  max-width: 30ch;
+  margin-top: -12vw;
+  font-weight: 800;
+}
+.hero span {
+  color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #a16171;
+}

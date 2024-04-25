@@ -1,0 +1,41 @@
+.fav-wrapper {
+  background-color: #264653;
+  min-height: 100vh;
+}
+.fav {
+  padding: 3vw 6vw;
+}
+.fav h1 {
+  color: #a16171;
+  font-size: 35px;
+  margin-bottom: 1vw;
+}
+
+.fav-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 15vh;
+}
+.fav-col img {
+  width: 400px;
+  height: 480px;
+}
+.fav-col h2 {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 0.2vw;
+}
+.fav-col p {
+  color: #2a9d8f;
+  margin-bottom: 0.2vw;
+  font-size: 14px;
+}
+.fav-col button {
+  width: 35%;
+  background-color: transparent;
+  color: #e9c46a;
+  border: solid 1px #e9c46a;
+  padding: 0.3vw;
+  border-radius: 10px;
+}

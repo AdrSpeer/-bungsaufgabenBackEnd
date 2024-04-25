@@ -1,0 +1,62 @@
+header {
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 6vw;
+}
+
+.nav-headline {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+}
+.nav-headline h1 {
+  font-size: 30px;
+  color: #2a9d8f;
+}
+nav h2 {
+  font-size: 22px;
+  color: #2a9d8f;
+}
+
+nav input {
+  padding: 0.6vw 10vw;
+  margin-right: 0.4vw;
+  background-color: transparent;
+  border: solid 1px #2a9d8f;
+  border-radius: 10px;
+}
+nav button {
+  padding: 0.3vw 2vw;
+  margin: 0 0.2vw;
+  color: white;
+  background-color: #2a9d8f;
+  border: none;
+  border-radius: 10px;
+}
+nav a {
+  text-decoration: none;
+}
+.found-movies {
+  background-color: white;
+  position: absolute;
+  left: 35.8%;
+  top: 78%;
+  text-align: center;
+  padding: 0.3vw 6vw;
+  border-radius: 10px;
+  min-width: 590px;
+  max-width: 590px;
+}
+.found-movies p {
+  color: black;
+  cursor: pointer;
+}
+
+.notfound {
+  display: none;
+}

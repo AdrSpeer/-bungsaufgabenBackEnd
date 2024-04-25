@@ -1,0 +1,28 @@
+.allmovies-wrapper {
+  padding: 3vw 6vw;
+}
+.allmovies-wrapper h2 {
+  color: #2a9d8f;
+  margin: 2vw 0;
+  font-weight: 900;
+  font-size: 35px;
+}
+
+.allmovies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4vw;
+}
+.allmovies img {
+  width: 400px;
+  height: 480px;
+}
+.allmovies h6 {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+}
+.allmovies p {
+  color: #2a9d8f;
+  font-size: 14px;
+}

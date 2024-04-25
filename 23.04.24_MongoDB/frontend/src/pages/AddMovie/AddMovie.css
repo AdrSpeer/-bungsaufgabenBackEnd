@@ -1,0 +1,32 @@
+.add-movie-headline {
+  background-color: #264653;
+}
+.add-movie {
+  padding: 0 6vw;
+}
+.add-movie h1 {
+  color: #a16171;
+  font-size: 30px;
+  margin-bottom: 2vw;
+}
+.add-movie form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8vw;
+}
+.add-movie input {
+  border: solid 1px #2a9d8f;
+  background-color: transparent;
+  padding: 1vw;
+  border-radius: 5px;
+  width: 40%;
+}
+.add-movie button {
+  background-color: #2a9d8f;
+  border-radius: 5px;
+  color: white;
+  padding: 0.5vw 3vw;
+  border: none;
+  margin-bottom: 4vw;
+}
