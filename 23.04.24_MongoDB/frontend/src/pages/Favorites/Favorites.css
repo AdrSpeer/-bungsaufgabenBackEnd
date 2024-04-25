@@ -14,7 +14,7 @@
 .fav-col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 15vh;
+  margin-bottom: 65vh;
 }
 .fav-col img {
   width: 400px;
