@@ -23,6 +23,7 @@ const Favorites = () => {
       .then((res) => {
         if (res.ok) {
           setFavoriteMovies(updatedFavorites);
+          location.reload();
         }
       })
       .catch((err) => console.log("Failed to fetch", err));
@@ -30,7 +31,7 @@ const Favorites = () => {
   useEffect(() => {
     if (favorites && Array.isArray(favorites) && allMovies) {
       const favoriteMoviesData = allMovies?.filter((movie) =>
-        favorites.some((fav) => fav?.movieId === movie?._id)
+        favorites?.some((fav) => fav?.movieId === movie?._id)
       );
       setFavoriteMovies(favoriteMoviesData);
     }

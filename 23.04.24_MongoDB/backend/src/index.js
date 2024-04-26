@@ -1,10 +1,10 @@
 import express from "express";
 import morgan from "morgan";
 import { body, validationResult } from "express-validator";
-import { moviesDAO } from "./db-access/moviesDAO.js";
-import { favoritesDAO } from "./db-access/favoritesDAO.js";
 import cors from "cors";
-import { ObjectId } from "mongodb";
+import { Movies } from "./models/movies.js";
+import { connectToDatabase } from "./models/connectDb.js";
+import { Favorites } from "./models/favorites.js";
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
@@ -13,8 +13,7 @@ app.use(cors());
 
 // Movies
 app.get("/api/v1/movies", (_, res) => {
-  moviesDAO
-    .findAll()
+  Movies.find({})
     .then((movies) => res.json(movies))
     .catch((err) => {
       console.log(err);
@@ -24,24 +23,13 @@ app.get("/api/v1/movies", (_, res) => {
 
 app.get("/api/v1/movies/:movieId", (req, res) => {
   const movieId = req.params.movieId;
-  moviesDAO
-    .findById(movieId)
+  Movies.findById(movieId)
     .then((movie) => res.json(movie))
     .catch((err) => {
       console.log(err);
       res
         .status(500)
         .json({ err, message: "Could not find movie with the id:", movieId });
-    });
-});
-app.get("/api/v1/moviesearch/:movieName", (req, res) => {
-  const movieName = req.params.movieName.toLowerCase();
-  moviesDAO
-    .findByName(movieName)
-    .then((movie) => res.json(movie))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ err, message: "Could not find movie with Move:" });
     });
 });
 
@@ -70,8 +58,7 @@ app.post(
       poster: req.body.poster,
       plot: req.body.plot,
     };
-    moviesDAO
-      .createOne(movieInfo)
+    Movies.create(movieInfo)
       .then((addedMovie) => res.json(addedMovie || {}))
       .catch((err) => {
         console.log(err);
@@ -82,8 +69,7 @@ app.post(
 
 // Favorites
 app.get("/api/v1/favorites", (_, res) => {
-  favoritesDAO
-    .findAllFavorites()
+  Favorites.find({})
     .then((favorites) => res.json(favorites))
     .catch((err) => {
       console.log(err);
@@ -93,9 +79,9 @@ app.get("/api/v1/favorites", (_, res) => {
 
 app.post("/api/v1/movies/:movieId/favorite", (req, res) => {
   const newFavorite = {
-    movieId: ObjectId.createFromHexString(req.params.movieId),
+    movieId: req.params.movieId,
   };
-  favoritesDAO.createOneFavorite(newFavorite).then((addedFav) => {
+  Favorites.create(newFavorite).then((addedFav) => {
     if (addedFav) {
       res.json(addedFav);
     } else {
@@ -105,8 +91,8 @@ app.post("/api/v1/movies/:movieId/favorite", (req, res) => {
 });
 
 app.delete("/api/v1/favorites/:movieId", (req, res) => {
-  favoritesDAO
-    .deleteFavorite(req.params.movieId)
+  const movieId = req.params.movieId;
+  Favorites.findOneAndDelete({ movieId: movieId })
     .then((deletedFav) => res.json(deletedFav || {}))
     .catch((err) => {
       console.log(err);
@@ -114,8 +100,15 @@ app.delete("/api/v1/favorites/:movieId", (req, res) => {
     });
 });
 
-const PORT = 3003;
+connectToDatabase()
+  .then(() => {
+    const PORT = 3003;
 
-app.listen(PORT, () => console.log("Server listening at Port: ", PORT));
+    app.listen(PORT, () => console.log("Server listening at Port: ", PORT));
+  })
+  .catch((err) => {
+    console.log(err);
+    process.exit();
+  });
 
 // 6627be42b7cf5cf082a06815
